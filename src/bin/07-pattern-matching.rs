@@ -6,6 +6,8 @@ enum GameState{
 
 fn main(){
     let state = GameState::Playing(42);
+    let _paused_state = GameState::Paused; // _をつけると未使用変数として警告が出ない
+    let _game_over_state = GameState::GameOver(String::from("Lost all lives"));
 
     match state {
         GameState::Playing(turn) => println!("Game in progress at turn: {}", turn),
